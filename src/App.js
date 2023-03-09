@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Cards from "./components/Cards/Cards.jsx";
 import Nav from "./components/Nav/Nav";
-
+//
 function App() {
   const [characters, setCharacters] = useState([]);
 
