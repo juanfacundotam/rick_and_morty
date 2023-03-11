@@ -1,0 +1,17 @@
+.divAbout {
+  background-color: rgba(151, 74, 74, 0.205);
+
+  /* background-color: rgba(247, 9, 235, 0.507); */
+  width: 80%;
+  background-color:  rgba(0, 0, 0, 0.507);
+  color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+  height: max-content;
+  z-index: 0;
+
+}

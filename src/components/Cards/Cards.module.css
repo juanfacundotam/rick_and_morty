@@ -6,7 +6,37 @@
     justify-content: center;
     text-align: center;
     width: 80%;
-    height: max-content;
+    /* height: max-content; */
+/*  */
     z-index: 0;
+
+    
+}
+::-webkit-scrollbar {
+    padding:0px;
+    width: 10px;
+    height: 10px;
+    /* border-radius: 15px; */
+    background-color: #8938e6;
 }
 
+::-webkit-scrollbar-thumb {
+
+    border-radius: 15px;
+    background-color: #371149;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #c4c0c0;
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 15px;
+    background-color: #8e2bbd;
+}
+
+::-webkit-scrollbar-button {
+    background-color: #e9188b;
+    height: 0;
+  }
