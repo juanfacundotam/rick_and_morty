@@ -5,7 +5,7 @@
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   color: white;
-  width: 150px;
+  width: 40%;
   height:25px;
   border: 1px solid white;
   padding: 0 0 0 10px;
@@ -15,16 +15,40 @@
 }
 
 .btn {
-  background-color: rgb(85, 15, 99);
+  background: linear-gradient(315deg, #d8320d19, #7c1a8b);
   color: white;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  width: 100px;
+  width: 30%;
   height:25px;
   border: 1px solid white;
   border-radius: 0 10px 10px 0;
   margin-right: 30px;
   cursor: pointer;
+  transition: all 5s easy; 
+}
+.btn:hover {
+  background: linear-gradient(600deg, #900037d3, #85078eea);
+
+}
+
+.btnRandom{
+  background: linear-gradient(315deg, #d8320d19, #7c1a8b);
+  color: white;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  width: 25px;
+  height:25px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-right: 30px;
+  cursor: pointer;
   transition: all 3s easy; 
 }
+.btnRandom:hover {
+  background: linear-gradient(600deg, #900037d3, #85078eea);
+  transform: scale(1.1);
+}
+

@@ -24,6 +24,10 @@ function App() {
       navigate("/home");
     }
   }
+  function logout() {
+      setAccess(false);
+      navigate("/");
+  }
   useEffect(() => {
     !access && navigate('/');
  }, [access]);
@@ -54,7 +58,7 @@ function App() {
     <div className="App" style={{ padding: "25px" }}>
       {location.pathname !== "/" && (
         <div className="divSearch">
-          <NavBar onSearch={onSearch} />
+          <NavBar onSearch={onSearch} logout={logout}/>
         </div>
       )}
 

@@ -39,8 +39,9 @@ export default function Form (props) {
             <p>{errors.username && errors.username}</p>
             <div className={style.divPass}> 
             <label htmlFor="password">Password:</label>
-            <input type="text" name="password" value={userData.password} onChange={handleInputChange}/>
+            <input type="password" name="password" value={userData.password} onChange={handleInputChange}/>
             </div>
+            <p>{errors.password && errors.password}</p>
             <button className={style.button} type="submit">Login</button>
         </form>
     );

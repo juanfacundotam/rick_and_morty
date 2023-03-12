@@ -8,7 +8,7 @@ const validation = (userData) => {
     errors.username = "El nombre de usuario tiene que ser un email";
   }
   if (!userData.username) {
-    errors.username = "Este campo no puede estar vacio";
+    errors.username = "Este campo no puede quedar vacio";
   }
   if (userData.username.length > 35) {
     errors.username = "Máximo 35 caracteres";
@@ -18,10 +18,13 @@ const validation = (userData) => {
   if (!regexPass.test(userData.password)) {
     errors.password = "Debe contener al menos un número"
   }
+
   if(userData.password.length < 6 || userData.password.length > 10) {
     errors.password = "La contraseña debe contener entre 6 y 10 caracteres"
   }
-
+  if(!userData.password) {
+    errors.password = "Este campo no puede quedar vacio"
+}
   return errors;
 
   //User

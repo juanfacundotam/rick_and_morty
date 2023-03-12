@@ -1,25 +1,33 @@
 .form {
-  background-color: rgba(0, 0, 0, 0.219);
+  background: linear-gradient(315deg, #0333f47b, #ff005985);
   position: flex;
   justify-content: center;
   align-items: center;
   text-align: end;
   padding: 30px;
+  border-radius: 20px;
+  margin-top: 40px;
 }
 
 .form .divUser {
-  margin: 30px;
+  margin: 0 30px 0 0;
   display: flex;
   flex-direction: row;
   justify-content: end;
   align-items: center;
 }
 .form .divUser label {
-  color: white;
   margin: 10px;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+}
+.form .divUser input {
+  color: rgb(0, 0, 0);
+
+  height: 20px;
 }
 .form .divPass {
-  margin: 30px;
+  margin: 0 30px 0 0;
   display: flex;
   justify-content: end;
   align-items: center;
@@ -27,8 +35,16 @@
 .form .divPass label {
   color: white;
   margin: 10px;
+  font-size: 25px;
+}
+.form .divPass input {
+  height: 20px;
 }
 
 .form .button {
-    margin-right: 40px;
+  color: white;
+  background: linear-gradient(315deg, #d8320d19, #7c1a8b);
+  margin: 10px;
+  padding: 3px 5px 3px 5px;
+  border-radius: 5px;
 }

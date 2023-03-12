@@ -1,5 +1,5 @@
 .container {
-  background-color: rgba(3, 3, 5, 0.514);
+background: linear-gradient(600deg, #900037d3, #85078eea);
   background-position: top;
   position: relative;
   margin: 20px;
@@ -10,7 +10,7 @@
   /* width: ; */
 }
 .container .closebtn {
-  background-color: rgba(32, 117, 89, 0.849);
+  background-color: rgba(205, 11, 195, 0.452);
   color: rgb(255, 255, 255);
   border: none;
   position: absolute;
@@ -43,7 +43,7 @@
   top: 10px;
 }
 .container .closebtn:hover {
-  background-color: rgba(16, 71, 54, 0.877);
+  background-color: rgb(166, 3, 101);
   color: white;
   transform: rotate(180deg);
 }
