@@ -21,7 +21,7 @@ export default function Form (props) {
         setErrors(
             validation({...userData, [property]: value})
         )
-        console.log(errors)
+
         // validation ({...userData, [property]: value}, errors, setErrors);
     };
 
@@ -31,19 +31,25 @@ export default function Form (props) {
     }
 
     return (
+        <div>
+
         <form className={style.form}  onSubmit={handleSubmit}>
             <div className={style.divUser}>
             <label htmlFor="username">UserName:</label>
-            <input type="text" name="username" value={userData.username} onChange={handleInputChange}/>
+            <input className={errors.username ? style.error : style.success } type="text" name="username" value={userData.username} onChange={handleInputChange}/>
             </div>
-            <p>{errors.username && errors.username}</p>
             <div className={style.divPass}> 
             <label htmlFor="password">Password:</label>
-            <input type="password" name="password" value={userData.password} onChange={handleInputChange}/>
+            <input className={errors.password ? style.error : style.success  } type="password" name="password" value={userData.password} onChange={handleInputChange}/>
+                
             </div>
-            <p>{errors.password && errors.password}</p>
             <button className={style.button} type="submit">Login</button>
         </form>
+        <div className={ errors.username === '' && errors.password === '' ? style.divErroresVacio : style.divErrores }>
+            <p>{errors.username && errors.username}</p>
+            <p>{errors.password && errors.password}</p>
+        </div>
+        </div>
     );
 };
 

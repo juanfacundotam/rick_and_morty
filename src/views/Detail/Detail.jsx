@@ -47,7 +47,9 @@ const Detail = () => {
           </div>
         </>
       ) : (
-        <h3>Loading...</h3>
+        <div className={style.divLoader}>
+          <div className={style.customLoader}></div>
+        </div>
       )}
     </div>
   );

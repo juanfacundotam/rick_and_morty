@@ -1,13 +1,17 @@
 import React from "react";
-import style from "../About/About.module.css"
+import style from "../About/About.module.css";
+import foto from "../../assets/foto.jpg"
 
 const About = () => {
   return (
     <div className={style.divAbout}>
-        <h1>ESTO ES ABOUT</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur quidem quod quisquam ipsum possimus necessitatibus excepturi magnam porro praesentium qui. Ipsum rem nostrum a aliquam aspernatur eaque cumque alias hic!</p>
-        <h3>Nosotros</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, tempore at consequatur magni neque inventore, natus qui rem, maxime laudantium maiores commodi. Odio voluptate facilis nobis doloremque neque incidunt maxime?</p>
+      <div className={style.divText}>
+        <h1>Rick and Morty APP</h1>
+        <p>Aplicacion interactiva hecha a base de JavaScript, React y Redux.</p>
+        <h3>Sobre Mí</h3>
+        <p>FullStack Developer</p>
+      </div>
+        <img src={foto} className={style.image} alt="Imagen del desarrollador" />
     </div>
   );
 };

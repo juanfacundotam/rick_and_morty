@@ -1,5 +1,5 @@
 .form {
-  background: linear-gradient(315deg, #0333f47b, #ff005985);
+  background-color: rgba(0, 0, 0, 0.702);
   position: flex;
   justify-content: center;
   align-items: center;
@@ -20,12 +20,28 @@
   margin: 10px;
   font-size: 25px;
   color: rgb(255, 255, 255);
+  font-family: "Rampart One", cursive;
 }
 .form .divUser input {
-  color: rgb(0, 0, 0);
-
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.824);
   height: 20px;
+  border-radius: 5px;
+  color: white;
 }
+.form .divUser input:focus {
+  background-color: rgb(0, 0, 0);
+  outline: none;
+
+  color: rgb(255, 255, 255);
+}
+.form .divUser input:-webkit-autofill,
+.form .divUser input:-webkit-autofill:hover,
+.form .divUser input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0.479) inset !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+}
+
 .form .divPass {
   margin: 0 30px 0 0;
   display: flex;
@@ -33,18 +49,92 @@
   align-items: center;
 }
 .form .divPass label {
+  font-family: "Rampart One", cursive;
   color: white;
   margin: 10px;
   font-size: 25px;
 }
 .form .divPass input {
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.824);
   height: 20px;
+  border-radius: 5px;
+  color: white;
+}
+.form .divPass input:focus {
+  background-color: rgb(0, 0, 0);
+  outline: none;
+
+  color: rgb(255, 255, 255);
+}
+.form .divPass input:-webkit-autofill,
+.form .divPass input:-webkit-autofill:hover,
+.form .divPass input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0.479) inset !important;
+  box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0.479) inset !important;
 }
 
 .form .button {
   color: white;
-  background: linear-gradient(315deg, #d8320d19, #7c1a8b);
-  margin: 10px;
+  background-color: rgba(255, 0, 247, 0.512);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  margin: 5px;
   padding: 3px 5px 3px 5px;
+  border-radius: 10px;
+  border: transparent;
+  transition: 0.3s;
+}
+
+.form .button:hover {
+  transform: scale(1.1);
+  background-color: rgb(255, 0, 255);
+  border: 1px solid transparent;
+  -webkit-box-shadow: 0px 0px 122px 18px rgba(219, 27, 206, 0.8);
+  -moz-box-shadow: 0px 0px 122px 18px rgba(219, 27, 206, 0.8);
+  box-shadow: 0px 0px 122px 18px rgba(219, 27, 206, 0.8);
+}
+.form p {
+  color: rgb(255, 4, 4);
+
+  text-align: start;
+}
+
+.form .divPass .error {
+  /* background-color: blueviolet; */
+  border: 1px solid red;
+}
+
+.form .divPass .success {
+  border: 1px solid green;
+} 
+
+
+.form .divUser .error {
+  /* background-color: blueviolet; */
+  border: 1px solid red;
+}
+
+.form .divUser .success {
+  border: 1px solid green;
+} 
+
+.divErrores {
+  background-color: rgba(0, 0, 0, 0.659);
+  border: 1px solid rgba(255, 0, 0, 0.479);
+  color: white;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  margin-top: 30px;
   border-radius: 5px;
 }
+.divErroresVacio {
+  background-color: transparent;
+  border: transparent;
+}
+.divErrores p{
+  padding: 0px 10px 0px 10px;
+}
+
+

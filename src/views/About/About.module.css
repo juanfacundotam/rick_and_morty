@@ -1,17 +1,33 @@
 .divAbout {
   background-color: rgba(151, 74, 74, 0.205);
-
   /* background-color: rgba(247, 9, 235, 0.507); */
-  width: 80%;
-  background-color:  rgba(0, 0, 0, 0.507);
+  max-width: 70%;
+  background-color: rgba(0, 0, 0, 0.507);
   color: white;
   border-radius: 20px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   text-align: center;
-  width: 80%;
-  height: max-content;
+  min-height: 500px;
   z-index: 0;
+}
 
+.divAbout .divText{
+  width: 400px;
+  font-family: "Rampart One", cursive;
+  text-align: center;
+
+}
+.divAbout .divText p{
+  
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+}
+
+.image {
+  border-radius: 15px;
+  width: 30%;
+  margin-right: 80px;
 }
