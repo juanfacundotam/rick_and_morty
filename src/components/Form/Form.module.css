@@ -106,7 +106,7 @@
 }
 
 .form .divPass .success {
-  border: 1px solid green;
+  /* border: 1px solid green; */
 } 
 
 
@@ -116,7 +116,7 @@
 }
 
 .form .divUser .success {
-  border: 1px solid green;
+  /* border: 1px solid green; */
 } 
 
 .divErrores {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import style from "./Form.module.css";
 import validation from "./validation"
 
@@ -40,12 +40,12 @@ export default function Form (props) {
             </div>
             <div className={style.divPass}> 
             <label htmlFor="password">Password:</label>
-            <input className={errors.password ? style.error : style.success  } type="password" name="password" value={userData.password} onChange={handleInputChange}/>
+            <input className={errors.password ? style.error : style.success } type="password" name="password" value={userData.password} onChange={handleInputChange}/>
                 
             </div>
             <button className={style.button} type="submit">Login</button>
         </form>
-        <div className={ errors.username === '' && errors.password === '' ? style.divErroresVacio : style.divErrores }>
+        <div  className={ errors.username === '' && errors.password === '' ? style.divErroresVacio : style.divErrores }>
             <p>{errors.username && errors.username}</p>
             <p>{errors.password && errors.password}</p>
         </div>

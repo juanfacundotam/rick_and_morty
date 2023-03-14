@@ -6,6 +6,7 @@ import About from "./views/About/About";
 import NavBar from "./components/Nav/NavBar";
 import Detail from "./views/Detail/Detail";
 import Error from "./views/Error/Error";
+import Favorites from "./views/Favorites/Favorites"
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import SearchBar from "./components/SearchBar/SearchBar";
 //
@@ -14,14 +15,17 @@ function App() {
  
   const [access, setAccess] = useState(false);
   const location = useLocation();
-  const username = "facutam@gmail.com";
-  const password = "123456";
+  const username = "";
+  const password = "";
   const navigate = useNavigate();
 
   function login(userData) {
     if (userData.password === password && userData.username === username) {
       setAccess(true);
       navigate("/home");
+    }
+    else {
+      alert("Usuario y/o contraseña incorrecta");
     }
   }
   function logout() {
@@ -72,6 +76,7 @@ function App() {
             }
           />
           <Route path="/about" element={<About />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/detail/:detailId" element={<Detail />} />
           <Route path="*" element={<Error />} />
         </Routes>

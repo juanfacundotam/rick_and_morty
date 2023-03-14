@@ -14,6 +14,7 @@ export default function NavBar({ onSearch, logout}) {
       <div className={style.divLinks} >
         <NavLink to={`/home`} className={({isActive}) => isActive? style.active : style.disable}>Home</NavLink>
         <NavLink to={`/about`} className={({isActive}) => isActive? style.active : style.disable}>About</NavLink>
+        <NavLink to={`/favorites`} className={({isActive}) => isActive? style.active : style.disable}>Favorites</NavLink>
       </div>
       <div className={style.divNavSearch}>
       <SearchBar onSearch={onSearch} />

@@ -1,42 +1,73 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import styles from "./Card.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { addFavorite, deleteFavorite } from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 
-const Container = styled.div`
-  background-color: #1a1b1ad6;
+// { id, name, species, gender, image, onClose }
 
-  border-radius: 10px;
-  width: 150px;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* flex-wrap: wrap; */
-`;
+export default function Card(props) {
+  const [isFav, setIsFav] = useState(false);
+  const myFavorites = useSelector((state) => state.myFavorites);
+  const dispatch = useDispatch();
+  const { pathname } = useLocation();
 
-export default function Card({ id, name, species, gender, image, onClose }) {
+  useEffect(() => {
+    myFavorites.forEach((fav) => {
+      if (fav.id === props.id) {
+        setIsFav(true);
+      }
+    });
+  }, [myFavorites]);
+
+  const handleFavorite = () => {
+    if (isFav) {
+      dispatch(deleteFavorite(props.id));
+      setIsFav(false);
+    } else {
+      dispatch(addFavorite(props));
+      setIsFav(true);
+    }
+  };
+
   const handleDelete = () => {
-    onClose(id);
+    props.onClose(props.id);
+    dispatch(deleteFavorite(props.id));
   };
 
   return (
-    <Container className={styles.container}>
-      <button className={styles.closebtn} onClick={handleDelete}>
-        X
-      </button>
-      <img className={styles.image} src={image} alt="Imagen de Rick" />
+    <div className={styles.container}>
+      <div className={styles.divButton}>
+        {/* {
+   isFav ? (
+      <button onClick={handleFavorite}>❤️</button>
+   ) : (
+      <button onClick={handleFavorite}>🤍</button>
+   )
+} */}
+
+        <button
+          className={`${isFav ? styles.actHeart : styles.desHeart} ${styles.heartbtn}`} onClick={handleFavorite}>❤</button>
+          {console.log(pathname)}
+        {pathname !== "/favorites" && 
+          <button className={styles.closebtn} onClick={handleDelete}>
+            X
+          </button>
+        }
+      </div>
+      <img className={styles.image} src={props.image} alt="Imagen de Rick" />
       <div className={styles.containertitles}>
-        <Link to={`/detail/${id}`} style={{ textDecoration: "none" }}>
-          <h2 className={styles.title}>{name}</h2>
+        <Link to={`/detail/${props.id}`} style={{ textDecoration: "none" }}>
+          <h2 className={styles.title}>{props.name}</h2>
         </Link>
         {/* <hr className={styles.linea}/> */}
         <div className={styles.divhab}>
-          <h2>{species}</h2>
-          <h2>{gender}</h2>
+          <h2>{props.species}</h2>
+          <h2>{props.gender}</h2>
         </div>
       </div>
-    </Container>
+    </div>
   );
 }
