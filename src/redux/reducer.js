@@ -19,7 +19,7 @@ import {
         return {
           ...state,
           myFavorites: [...state.allCharacters, action.payload],
-          allCharacters: [...state.myFavorites], //necesitamos dos estados que manejen la misma info para hacer los filtrados sin perder el original
+          allCharacters: [...state.allCharacters, action.payload], //necesitamos dos estados que manejen la misma info para hacer los filtrados sin perder el original
         };
       case DELETE_FAVORITE:
         return {
@@ -33,9 +33,8 @@ import {
       case CLEAN_DETAIL:
         return { ...state, characterDetail: {} };
       case FILTER_CARDS:
-  
         const allCharsFiltered = state.allCharacters.filter(
-          (char) => char.gender !== action.payload
+          (char) => char.gender === action.payload
         );
         return {...state, myFavorites: allCharsFiltered};
   
@@ -43,7 +42,7 @@ import {
         // no hace falta destructurar allCharacter de nuevo porque estamos en el mismo bloque. tambien podemos usar state.allCharacter
         return {
           ...state,
-          myFavorites: action.payload === "Ascendente" ? state.allCharacters.sort((a, b) => a.id < b.id) : state.allCharacters.sort((a, b) => a.id > b.id)
+          myFavorites: action.payload === "Ascendente" ? state.allCharacters.sort((a, b) => a.id - b.id) : state.allCharacters.sort((a, b) => b.id - a.id)
         };
       default:
         return { ...state };
