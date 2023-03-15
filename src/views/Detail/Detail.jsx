@@ -1,30 +1,27 @@
 import React from "react";
-import { useState, useEffect } from "react";
+// import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import style from "./Detail.module.css";
-import axios from "axios";
+// import { useDispatch, useSelector } from "react-redux";
+// import { cleanDetail, getCharacterDetail } from "../../redux/actions";
+import useCharacter from "../../hooks/useCharacter"
+
 
 const Detail = () => {
-  const [character, setCharacter] = useState([]);
-  const { detailId } = useParams();
-  console.log(detailId);
+  //Crearemos un hook de hook
+  const character = useCharacter();
+  // const character = useSelector((state) => state.characterDetail);
+  // const { detailId } = useParams();
+  // const dispatch = useDispatch();
+  // console.log(detailId);
+  // console.log(character.name)
 
-  useEffect(() => {
-    const URL_BASE = "https://be-a-rym.up.railway.app/api";
-    const API_KEY = "b755a0b71e3e.670b9fc34bc30567595d";
-    axios(`${URL_BASE}/character/${detailId}?key=${API_KEY}`)
-      .then((response) => {
-        if (response.data.name) {
-          setCharacter(response.data); //axios devuelve la response, dentro de ella esta data, dentro las propiedades de la api
-        } else {
-          window.alert("No hay personajes con ese ID");
-        }
-      })
-      .catch((err) => {
-        window.alert("No hay personajes con ese ID");
-      });
-    return setCharacter({});
-  }, [detailId]);
+  // useEffect(() => {
+  //   dispatch(getCharacterDetail(detailId));
+  //   return () => {
+  //     dispatch(cleanDetail());
+  //   }
+  // }, [detailId]);
 
   return (
     <div className={style.divDetail}>
