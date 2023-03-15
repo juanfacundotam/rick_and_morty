@@ -4,7 +4,7 @@ import styled from "styled-components";
 import styles from "./Card.module.css";
 import { Link, useLocation } from "react-router-dom";
 import { addFavorite, deleteFavorite } from "../../redux/actions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, connect } from "react-redux";
 
 // { id, name, species, gender, image, onClose }
 
@@ -14,6 +14,7 @@ export default function Card(props) {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
 
+
   useEffect(() => {
     myFavorites.forEach((fav) => {
       if (fav.id === props.id) {
@@ -21,19 +22,28 @@ export default function Card(props) {
       }
     });
   }, [myFavorites]);
+  // useEffect(() => {
+  //   props.myFavorites.forEach((fav) => {
+  //     if (fav.id === props.id) {
+  //       setIsFav(true);
+  //     }
+  //   });
+  // }, [props.myFavorites]);
 
   const handleFavorite = () => {
     if (isFav) {
       dispatch(deleteFavorite(props.id));
+      // props.deleteFavorite(props.id)
       setIsFav(false);
     } else {
       dispatch(addFavorite(props));
       setIsFav(true);
     }
   };
-
+  
   const handleDelete = () => {
     props.onClose(props.id);
+    // props.deleteFavorite(props.id)
     dispatch(deleteFavorite(props.id));
   };
 
@@ -50,7 +60,7 @@ export default function Card(props) {
 
         <button
           className={`${isFav ? styles.actHeart : styles.desHeart} ${styles.heartbtn}`} onClick={handleFavorite}>❤</button>
-          {console.log(pathname)}
+
         {pathname !== "/favorites" && 
           <button className={styles.closebtn} onClick={handleDelete}>
             X
@@ -71,3 +81,21 @@ export default function Card(props) {
     </div>
   );
 }
+
+
+// const mapStateToProps = (state) => {
+//   return {
+//     myFavorites: state.myFavorites,
+//   };
+// }
+// const mapDispatchToProps = (dispatch) => {
+// return {
+//   deleteFavorite: (id) => {
+//     dispatch(deleteFavorite(id))
+//   }
+// }
+// }
+
+//sacar el export de arriba para poner el de abajo
+// export default connect(mapStateToProps, mapDispatchToProps)(Card);
+

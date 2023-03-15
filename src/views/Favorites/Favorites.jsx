@@ -9,7 +9,6 @@ const Favorites = () => {
   return (
     <div className={style.divFavorites}>
       {myFavorites.map((char) => {
-        console.log(char.name);
         return (
           <Card
             key={char.id}
