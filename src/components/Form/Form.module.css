@@ -96,28 +96,16 @@
 }
 .form p {
   color: rgb(255, 4, 4);
-
   text-align: start;
 }
 
 .form .divPass .error {
-  /* background-color: blueviolet; */
   border: 1px solid red;
 }
-
-.form .divPass .success {
-  /* border: 1px solid green; */
-} 
-
 
 .form .divUser .error {
-  /* background-color: blueviolet; */
   border: 1px solid red;
 }
-
-.form .divUser .success {
-  /* border: 1px solid green; */
-} 
 
 .divErrores {
   background-color: rgba(0, 0, 0, 0.659);
@@ -133,8 +121,6 @@
   background-color: transparent;
   border: transparent;
 }
-.divErrores p{
+.divErrores p {
   padding: 0px 10px 0px 10px;
 }
-
-

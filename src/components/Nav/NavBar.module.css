@@ -8,7 +8,6 @@
   );
   width: 80%;
   margin-bottom: 30px;
-  /* margin: auto; */
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
@@ -20,31 +19,14 @@
   align-items: center;
   justify-content: start;
   width: 100%;
-  /* border: 2px solid red; */
-  /* background-color: rgb(71, 9, 74); */
 }
-/* .nav .divLinks .link {
-  font-family: 'Rampart One', cursive;
-  font-size: 30px;
-  text-decoration: none;
-  color: white;
-  margin-left: 40px;
-}
-.nav .divLinks .link:hover {
-  text-decoration: none;
-  transform: scale(1.1);
-  
-} */
 
 .nav .divNavSearch {
   text-align: end;
   position: relative;
-  
   border-radius: 20px;
   display: flex;
   justify-content: end;
-
-  /* background-color: black; */
 }
 .active {
   border: 1px solid white;
@@ -71,25 +53,24 @@
   top: 5px;
   width: fit-content;
   height: fit-content;
-
 }
 
 .btnLogout button {
   color: white;
-background-color: rgba(255, 0, 247, 0.512);
-font-family: "Poiret One", cursive;
-font-size: 18px;
-margin: 5px;
-padding: 3px 5px 3px 5px;
-border-radius: 3px;
-border: transparent;
-transition: 0.3s;
+  background-color: rgba(255, 0, 247, 0.512);
+  font-family: "Poiret One", cursive;
+  font-size: 18px;
+  margin: 5px;
+  padding: 3px 5px 3px 5px;
+  border-radius: 3px;
+  border: transparent;
+  transition: 0.3s;
 }
 
 .btnLogout button:hover {
   background-color: rgb(255, 0, 255);
   border: 1px solid transparent;
-  -webkit-box-shadow:0px 0px 122px 18px rgba(219,27,206,0.8);
--moz-box-shadow: 0px 0px 122px 18px rgba(219,27,206,0.8);
-box-shadow: 0px 0px 122px 18px rgba(219,27,206,0.8);
+  -webkit-box-shadow: 0px 0px 122px 18px rgba(219, 27, 206, 0.8);
+  -moz-box-shadow: 0px 0px 122px 18px rgba(219, 27, 206, 0.8);
+  box-shadow: 0px 0px 122px 18px rgba(219, 27, 206, 0.8);
 }

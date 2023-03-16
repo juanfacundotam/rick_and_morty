@@ -15,8 +15,8 @@ function App() {
  
   const [access, setAccess] = useState(false);
   const location = useLocation();
-  const username = "";
-  const password = "";
+  const username = "mail@mail.com";
+  const password = "123456";
   const navigate = useNavigate();
 
   function login(userData) {

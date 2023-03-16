@@ -11,18 +11,10 @@ import { useDispatch, useSelector, connect } from "react-redux";
 export default function Card(props) {
   const [isFav, setIsFav] = useState(false);
   const myFavorites = useSelector((state) => state.myFavorites);
-  // const favorites = useSelector((state) => state.favorites);
+
   const dispatch = useDispatch();
   const { pathname } = useLocation();
 
-
-  // useEffect(() => {
-  //   favorites.forEach((fav) => {
-  //     if (fav.id === props.id) {
-  //       setIsFav(true);
-  //     }
-  //   });
-  // }, [favorites]);
   useEffect(() => {
     myFavorites.forEach((fav) => {
       if (fav.id === props.id) {
@@ -30,15 +22,6 @@ export default function Card(props) {
       }
     });
   }, [myFavorites]);
-
-
-  // useEffect(() => {
-  //   props.myFavorites.forEach((fav) => {
-  //     if (fav.id === props.id) {
-  //       setIsFav(true);
-  //     }
-  //   });
-  // }, [props.myFavorites]);
 
   const handleFavorite = () => {
     if (isFav) {
@@ -50,7 +33,7 @@ export default function Card(props) {
       setIsFav(true);
     }
   };
-  
+
   const handleDelete = () => {
     props.onClose(props.id);
     // props.deleteFavorite(props.id)
@@ -69,20 +52,25 @@ export default function Card(props) {
 } */}
 
         <button
-          className={`${isFav ? styles.actHeart : styles.desHeart} ${styles.heartbtn}`} onClick={handleFavorite}>❤</button>
+          className={`${isFav ? styles.actHeart : styles.desHeart} ${
+            styles.heartbtn
+          }`}
+          onClick={handleFavorite}
+        >
+          ❤
+        </button>
 
-        {pathname !== "/favorites" && 
+        {pathname !== "/favorites" && (
           <button className={styles.closebtn} onClick={handleDelete}>
             X
           </button>
-        }
+        )}
       </div>
       <img className={styles.image} src={props.image} alt="Imagen de Rick" />
       <div className={styles.containertitles}>
         <Link to={`/detail/${props.id}`} style={{ textDecoration: "none" }}>
           <h2 className={styles.title}>{props.name}</h2>
         </Link>
-        {/* <hr className={styles.linea}/> */}
         <div className={styles.divhab}>
           <h2>{props.species}</h2>
           <h2>{props.gender}</h2>
@@ -91,7 +79,6 @@ export default function Card(props) {
     </div>
   );
 }
-
 
 // const mapStateToProps = (state) => {
 //   return {
@@ -108,4 +95,3 @@ export default function Card(props) {
 
 //sacar el export de arriba para poner el de abajo
 // export default connect(mapStateToProps, mapDispatchToProps)(Card);
-
