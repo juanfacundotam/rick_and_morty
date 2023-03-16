@@ -3,6 +3,7 @@ import {
     CLEAN_DETAIL,
     DELETE_FAVORITE,
     FILTER_CARDS,
+    GET_CHARACTERS,
     GET_CHARACTER_DETAIL,
     ORDER_CARDS,
   } from "./actions";
@@ -11,6 +12,7 @@ import {
     myFavorites: [],
     characterDetail: {},
     allCharacters: [],
+    // favorites: [],
   };
   
   const rootReducer = (state = initialState, action) => {
@@ -18,32 +20,48 @@ import {
       case ADD_FAVORITE:
         return {
           ...state,
-          myFavorites: [...state.allCharacters, action.payload],
+          myFavorites: [...state.myFavorites, action.payload],
           allCharacters: [...state.allCharacters, action.payload], //necesitamos dos estados que manejen la misma info para hacer los filtrados sin perder el original
         };
       case DELETE_FAVORITE:
+        const filtered = state.myFavorites.filter(
+          (char) => char.id !== action.payload
+        )
         return {
           ...state,
-          myFavorites: state.myFavorites.filter(
-            (char) => char.id !== action.payload
-          ),
+          myFavorites: filtered,
+          allCharacters: filtered,
         };
       case GET_CHARACTER_DETAIL:
         return { ...state, characterDetail: action.payload };
       case CLEAN_DETAIL:
         return { ...state, characterDetail: {} };
       case FILTER_CARDS:
-        const allCharsFiltered = state.allCharacters.filter(
-          (char) => char.gender === action.payload
-        );
+        let allCharsFiltered = [];
+        if(action.payload !== 'Todos') {
+          console.log('x')
+          allCharsFiltered = state.allCharacters.filter(
+            (char) => char.gender === action.payload
+          );
+        } else {
+          console.log('T')
+          allCharsFiltered = state.allCharacters;
+        }
         return {...state, myFavorites: allCharsFiltered};
   
       case ORDER_CARDS:
         // no hace falta destructurar allCharacter de nuevo porque estamos en el mismo bloque. tambien podemos usar state.allCharacter
         return {
           ...state,
-          myFavorites: action.payload === "Ascendente" ? state.allCharacters.sort((a, b) => a.id - b.id) : state.allCharacters.sort((a, b) => b.id - a.id)
+          myFavorites: 
+            action.payload === "Ascendente" 
+            ? state.allCharacters.sort((a, b) => a.id - b.id) 
+            : state.allCharacters.sort((a, b) => b.id - a.id)
         };
+        // case GET_CHARACTERS:
+        //   return {
+        //     ...state, favorites: state.myFavorites
+        //   }
       default:
         return { ...state };
     }

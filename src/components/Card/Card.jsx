@@ -11,10 +11,18 @@ import { useDispatch, useSelector, connect } from "react-redux";
 export default function Card(props) {
   const [isFav, setIsFav] = useState(false);
   const myFavorites = useSelector((state) => state.myFavorites);
+  // const favorites = useSelector((state) => state.favorites);
   const dispatch = useDispatch();
   const { pathname } = useLocation();
 
 
+  // useEffect(() => {
+  //   favorites.forEach((fav) => {
+  //     if (fav.id === props.id) {
+  //       setIsFav(true);
+  //     }
+  //   });
+  // }, [favorites]);
   useEffect(() => {
     myFavorites.forEach((fav) => {
       if (fav.id === props.id) {
@@ -22,6 +30,8 @@ export default function Card(props) {
       }
     });
   }, [myFavorites]);
+
+
   // useEffect(() => {
   //   props.myFavorites.forEach((fav) => {
   //     if (fav.id === props.id) {
