@@ -121,13 +121,13 @@ font-family: "Poiret One", cursive;
   margin: 0;
   font-size: 20px;
 }
-.container .containertitles h2:hover {
-  color: rgb(255, 0, 162);
-}
 .container .containertitles .title {
   /* text-decoration:underline; */
   color: rgb(255, 255, 255);
   margin: 15px 0 15px 0;
+}
+.container .containertitles .title:hover {
+  color: rgb(255, 0, 162);
 }
 
 .container .containertitles .divhab {

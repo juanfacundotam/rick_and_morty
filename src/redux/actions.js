@@ -4,6 +4,7 @@ export const GET_CHARACTER_DETAIL = "GET_CHARACTER_DETAIL";
 export const CLEAN_DETAIL = "CLEAN_DETAIL";
 export const FILTER_CARDS = "FILTER_CARDS";
 export const ORDER_CARDS = "ORDER_CARDS";
+export const RESET_FAVORITES = "RESET_FAVORITES"
 
 export const addFavorite = (favorite) => {
   return { type: ADD_FAVORITE, payload: favorite };
@@ -33,3 +34,7 @@ export const filterCards = (gender) => {
 export const orderCards = (id) => {
   return { type: ORDER_CARDS, payload: id };
 };
+
+export const resetFavorites = () => {
+  return { type: RESET_FAVORITES}
+}

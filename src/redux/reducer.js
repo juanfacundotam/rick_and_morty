@@ -6,6 +6,7 @@ import {
   GET_CHARACTERS,
   GET_CHARACTER_DETAIL,
   ORDER_CARDS,
+  RESET_FAVORITES,
 } from "./actions";
 
 const initialState = {
@@ -56,6 +57,10 @@ const rootReducer = (state = initialState, action) => {
           action.payload === "Ascendente"
             ? state.allCharacters.sort((a, b) => a.id - b.id)
             : state.allCharacters.sort((a, b) => b.id - a.id),
+      };
+    case RESET_FAVORITES:
+      return {
+        ...state, myFavorites: state.allCharacters
       };
     default:
       return { ...state };

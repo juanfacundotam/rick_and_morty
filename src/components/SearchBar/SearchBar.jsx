@@ -25,7 +25,7 @@ export default function SearchBar({ onSearch }) {
     <div className={style.divSearchBar}>
       <input className={style.input} name="value" type="search" value={value.value} onChange={handleChange}/>
       <button className={style.btn} onClick={dobleFuncion}>Agregar</button>
-      <button className={style.btnRandom} onClick={() => onSearch(String(Math.floor(Math.random() * 826) + 1))}>R</button>
+      <button className={style.btnRandom} onClick={() => onSearch(String(Math.floor(Math.random() * 826) + 1), console.log(Math.random()*10)+1)}>R</button>
     </div>
   );
 }
