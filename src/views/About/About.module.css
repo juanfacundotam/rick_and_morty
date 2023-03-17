@@ -16,20 +16,21 @@
 
 .divAbout .divText {
   width: 400px;
+  font-size: 20px;
   font-family: "Rampart One", cursive;
   text-align: center;
+  font-size: 18px;
 }
 .divAbout .divText p {
   font-family: "Poiret One", cursive;
-  font-size: 20px;
   margin: 5px;
 }
 
 .image {
   border-radius: 15px;
-  width: 30%;
-  max-width: 25%;
-  margin-right: 80px;
+  width: 280px;
+  /* max-width: 25%; */
+  margin-right: 25px;
 }
 
 
@@ -90,4 +91,53 @@
     justify-content: center;
 
   }
+  .image {
+    margin: 30px 30px 10px 30px;
+    width: 280px;
+    height: 280px;
+
+  }
+  .divText {
+    /* font-size: 10px; */
+    margin-bottom: 30px;
+  }
 }
+
+
+@media screen and (max-width: 768px) {
+  .divText h1 {
+    font-size: 32px;
+  }
+  .image {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .divAbout .divText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center ;
+    align-items: center;
+    text-align: center;
+  }
+  .image {
+    width: 200px;
+    height: 200px;
+  }
+  .divText h1 {
+    font-size: 23px;
+  }
+  .divText h3 {
+    font-size: 20px;
+  }
+  .divText p {
+    /* border: 1px solid green; */
+    width:250px;
+    font-size: 15px;
+    margin: auto;
+  }
+  
+}
+
