@@ -15,11 +15,13 @@
 }
 
 .divDetail .divText {
+  font-family: "Poiret One", cursive;
   margin: 30px;
 }
 
 .divDetail .divText h1 {
   margin: 10px;
+  margin-bottom: 25px;
 }
 
 .divDetail .divText h3 {
@@ -97,4 +99,25 @@
   align-items: center;
   width: 100%;
   height: 270px;
+}
+
+
+@media screen and (max-width: 1050px) {
+  .divDetail {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .divDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .divDetail .divImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
