@@ -4,7 +4,6 @@
   display: flex;
   justify-content: end;
   align-items: center;
-
 }
 
 .input {
@@ -103,7 +102,7 @@
 
 @media screen and (max-width: 1050px) {
   .divSearchBar {
-    align-items:center;
+    align-items: center;
     height: 50px;
   }
   .input {
@@ -130,7 +129,28 @@
 @media screen and (max-width: 585px) {
   .input {
     width: 70px;
+  }
+  .active {
+    margin: 0 5px 0 5px;
+    font-size: 20px;
+  }
+  .disable {
+    margin: 0 5px 0 5px;
+    font-size: 20px;
+  }
 
+  .btnLogout {
+    top: 70px;
+    left: 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .divSearchBar {
+    border: none;
+  }
+  .input {
+    width: 70px;
   }
   .active {
     margin: 0 5px 0 5px;

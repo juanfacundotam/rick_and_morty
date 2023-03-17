@@ -163,3 +163,24 @@
     left: 15px;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .nav {
+    width: 100vh;
+    background: none;
+    border: none;
+  }
+  .active {
+    margin: 0 5px 0 5px;
+    font-size: 21px;
+  }
+  .disable {
+    margin: 0 5px 0 5px;
+    font-size: 21px;
+  }
+
+  .btnLogout {
+    top: 70px;
+    left: 15px;
+  }
+}

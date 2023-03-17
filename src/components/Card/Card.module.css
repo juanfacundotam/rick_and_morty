@@ -166,3 +166,24 @@ font-family: "Poiret One", cursive;
     z-index: 1;
 } */
 
+
+/* 
+@media screen and (max-width: 768px) {
+  .containerCards {
+
+    width: 100vh;
+  } 
+}
+
+@media screen and (max-width: 585px) {
+  
+  
+} */
+
+@media screen and (max-width: 450px) {
+  .container {
+    background-color: transparent;
+    width: 150px;
+  } 
+
+}

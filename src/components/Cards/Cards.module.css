@@ -41,3 +41,43 @@
     margin-top: 40px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .containerCards {
+    /* background-color: rgba(0, 0, 0, 0); */
+    width: 100vh;
+  } 
+}
+
+@media screen and (max-width: 585px) {
+  
+  
+}
+
+@media screen and (max-width: 450px) {
+  .containerCards {
+    background-color: transparent;
+    /* width: 100vh; */
+  } 
+
+}
+
+
+
+/* @media screen and (max-width: 1050px) {
+  .containerCards {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 585px) {
+
+}
+
+@media screen and (max-width: 450px) {
+
+} */
