@@ -33,3 +33,9 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+@media screen and (max-width: 1050px) {
+  .divFavorites {
+  margin-top: 92px;
+  }
+}

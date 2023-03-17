@@ -29,15 +29,15 @@ const Favorites = () => {
   return (
     <div className={style.divFavorites}>
       <div className={style.divSelects}>
-        <select onChange={handlerOrder} placeholder="aaaa">
-          <option value="defaultValue" disabled="disabled" selected>
+        <select onChange={handlerOrder} >
+          <option disabled="disabled" selected>
             Order By
           </option>
           <option value="Ascendente">Ascendente</option>
           <option value="Descendente">Descendente</option>
         </select>
         <select onChange={handlerFilter}>
-          <option value="defaultValue" disabled="disabled" selected>
+          <option disabled="disabled" selected>
             Filter By
           </option>
           <option value="Todos">Todos</option>

@@ -35,3 +35,9 @@
   background-color: #e9188b;
   height: 0;
 }
+
+@media screen and (max-width: 1050px) {
+  .containerCards {
+    margin-top: -20px;
+  }
+}
