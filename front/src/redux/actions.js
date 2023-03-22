@@ -15,9 +15,10 @@ export const deleteFavorite = (id) => {
 
 export const getCharacterDetail = (id) => {
   return function (dispatch) {
-    const URL_BASE = "https://be-a-rym.up.railway.app/api";
-    const API_KEY = "b755a0b71e3e.670b9fc34bc30567595d";
-    fetch(`${URL_BASE}/character/${id}?key=${API_KEY}`)
+    // const URL_BASE = "https://be-a-rym.up.railway.app/api";
+    // const API_KEY = "b755a0b71e3e.670b9fc34bc30567595d";
+    const URL_BASE = "http://localhost:3001";
+    fetch(`${URL_BASE}/rickandmorty/detail/${id}`)
       .then((response) => response.json())
       .then((data) => dispatch({ type: GET_CHARACTER_DETAIL, payload: data })); //axios devuelve la response, dentro de ella esta data, dentro las propiedades de la api
   };

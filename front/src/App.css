@@ -1,7 +1,11 @@
 .App {
    background-image: url(./assets/fondo2.jpg);
-   background-position: top center;
-   background-size: cover;
+   /* background-position:top center;
+   background-size:auto; */
+
+   background-attachment: fixed;
+   background-position: center center;
+
    background-blend-mode: multiply;
    min-height: 100vh;
    background-color: rgba(0, 0, 0, 0.178);

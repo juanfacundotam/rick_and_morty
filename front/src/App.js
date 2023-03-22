@@ -39,15 +39,16 @@ function App() {
   const closeCharacter = (id) => {
     setCharacters((oldChars) => oldChars.filter((char) => char.id !== id));
   };
-  // `https://rickandmortyapi.com/api/character/${character}`
-  const URL_BASE = "https://be-a-rym.up.railway.app/api";
-  const API_KEY = "b755a0b71e3e.670b9fc34bc30567595d";
+  // const URL_BASE = "https://be-a-rym.up.railway.app/api";
+  // const API_KEY = "b755a0b71e3e.670b9fc34bc30567595d";
+  
+  const URL_BASE = "http://localhost:3001";
   const onSearch = (character) => {
     if (characters.find((char) => char.id === Number(character))) {
       alert("No se permiten ID repetidos");
     } else {
       // fetch(`${URL_BASE}/character/${character}?key=${API_KEY}`)
-      fetch(`http://localhost:3001/rickandmorty/character/${character}`)
+      fetch(`${URL_BASE}/rickandmorty/onsearch/${character}`)
         .then((response) => response.json())
         .then((data) => {
           if (data.name) {
