@@ -16,7 +16,7 @@ http.createServer((req, res) => {
         let characterFilter = characters.find(char => char.id === Number(id))
 
         res.writeHead(200, {"Content-Type": "application/json"});
-        res.end(JSON.stringify(characterFilter));
+        res.end(JSON.stringify(characterFilter)); //Si fuese con filter pondriamos characterFilter[0]
     }
 
 }).listen(3001, "localhost");
