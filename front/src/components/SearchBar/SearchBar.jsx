@@ -15,10 +15,15 @@ export default function SearchBar({ onSearch }) {
   }
   
   const dobleFuncion = (event) => {
+    if(Number(character)){
     const fun = () => {onSearch(character)};
     fun();
     setValue({...value, value: ''});
     console.log(value)
+    }
+    else {
+      alert("ingrese solo número de ID")
+    }
   }
 
   return (

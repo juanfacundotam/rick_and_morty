@@ -1,5 +1,6 @@
+const { URL } = process.env;
+
 const getCharDetail = (res, id) => {
-  id = 3;
   fetch(`https://rickandmortyapi.com/api/character/${id}`)
     .then((response) => response.json())
     .then((data) => {
@@ -16,7 +17,6 @@ const getCharDetail = (res, id) => {
       res.writeHead(200, { "Content-Type": "application/json" });
       res.end(JSON.stringify(character));
     })
-
     .catch((error) => {
       res.writeHead(500, { "Content-Type": "text/plain" });
       res.end(`El personaje con id ${id} no fue encontrado`);
