@@ -5,6 +5,7 @@ import styles from "./Card.module.css";
 import { Link, useLocation } from "react-router-dom";
 import { addFavorite, deleteFavorite } from "../../redux/actions";
 import { useDispatch, useSelector, connect } from "react-redux";
+import { motion } from "framer-motion"
 
 // { id, name, species, gender, image, onClose }
 
@@ -42,7 +43,9 @@ export default function Card(props) {
   };
 
   return (
-    <div className={styles.container}>
+    <motion.div className={styles.container} initial={{opacity: 0, scale: 0.95 }}
+    animate={{opacity:1, scale: 1}}
+    transition={{duration:0.1}}>
       <div className={styles.divButton}>
         {/* {
    isFav ? (
@@ -77,7 +80,7 @@ export default function Card(props) {
           <h2>{props.gender}</h2>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

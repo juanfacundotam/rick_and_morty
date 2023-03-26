@@ -5,6 +5,7 @@ import style from "./Detail.module.css";
 // import { useDispatch, useSelector } from "react-redux";
 // import { cleanDetail, getCharacterDetail } from "../../redux/actions";
 import useCharacter from "../../hooks/useCharacter"
+import { motion } from "framer-motion";
 
 
 const Detail = () => {
@@ -24,7 +25,9 @@ const Detail = () => {
   // }, [detailId]);
 
   return (
-    <div className={style.divDetail}>
+    <motion.div className={style.divDetail} initial={{opacity: 0}}
+    animate={{y: "30px", opacity:1}}
+    transition={{duration: 0.8, delay: 0.1}}>
       {character.name ? (
         <>
           <div className={style.divText}>
@@ -48,7 +51,7 @@ const Detail = () => {
           <div className={style.customLoader}></div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

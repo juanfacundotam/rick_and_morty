@@ -11,8 +11,10 @@
 }
 
 .App .divSearch {
+  /* border: 2px solid green; */
   display: flex;
   justify-content: center;
+  align-items: center;
   /* background-color: rgba(247, 9, 235, 0.507); */
   width: 100%;
 }

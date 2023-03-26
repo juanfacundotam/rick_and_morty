@@ -1,26 +1,41 @@
 .form {
   background-color: rgba(0, 0, 0, 0.702);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+.form h1 {
+  /* border: 1px solid red; */
+  font-family: "Rampart One", cursive;
   position: flex;
   justify-content: center;
   align-items: center;
-  text-align: end;
-  padding: 30px;
+  text-align: center;
   border-radius: 20px;
-  margin-top: 40px;
+  color: white;
+  padding: 0 10px 0 10px;
+  margin-top: 0;
+  
 }
 
 .form .divUser {
-  margin: 0 30px 0 0;
+  /* border: 1px solid red; */
   display: flex;
-  flex-direction: row;
-  justify-content: end;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  margin: 15px 30px 30px 30px;
 }
 .form .divUser label {
-  margin: 10px;
   font-size: 25px;
   color: rgb(255, 255, 255);
   font-family: "Rampart One", cursive;
+  margin-bottom: 10px;
 }
 .form .divUser input {
   background-color: rgba(0, 0, 0, 0.25);
@@ -43,15 +58,16 @@
 }
 
 .form .divPass {
-  margin: 0 30px 0 0;
+  /* border: 1px solid red; */
   display: flex;
+  flex-direction: column;
   justify-content: end;
   align-items: center;
 }
 .form .divPass label {
   font-family: "Rampart One", cursive;
   color: white;
-  margin: 10px;
+  margin-bottom: 10px;
   font-size: 25px;
 }
 .form .divPass input {
@@ -77,10 +93,11 @@
 .form .button {
   color: white;
   background-color: rgba(255, 0, 247, 0.512);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
   font-size: 15px;
-  margin: 5px;
-  padding: 3px 5px 3px 5px;
+  margin-top: 30px;
+  padding: 5px 15px 8px 15px;
   border-radius: 10px;
   border: transparent;
   transition: 0.3s;
@@ -100,19 +117,21 @@
 }
 
 .form .divPass .error {
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
 .form .divUser .error {
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
 .divErrores {
   background-color: rgba(0, 0, 0, 0.659);
-  border: 1px solid rgba(255, 0, 0, 0.479);
+  border: 3px solid rgba(255, 0, 0, 0.479);
   color: white;
-  width: fit-content;
+  font-family: "Poiret One", cursive;
+  width: 290px;
   height: fit-content;
+  text-align: star;
   margin: auto;
   margin-top: 30px;
   border-radius: 5px;

@@ -8,7 +8,7 @@ import Detail from "./views/Detail/Detail";
 import Error from "./views/Error/Error";
 import Favorites from "./views/Favorites/Favorites"
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import SearchBar from "./components/SearchBar/SearchBar";
+import {AnimatePresence} from "framer-motion"
 //
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -70,6 +70,7 @@ function App() {
       )}
 
       <div className="divRoutes">
+        <AnimatePresence>
         <Routes>
           <Route path="/" element={<Form login={login}/>} />
           <Route
@@ -83,6 +84,7 @@ function App() {
           <Route path="/detail/:detailId" element={<Detail />} />
           <Route path="*" element={<Error />} />
         </Routes>
+        </AnimatePresence>
       </div>
     </div>
   );

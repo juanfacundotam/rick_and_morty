@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from "./Form.module.css";
-import validation from "./validation"
+import validation from "./validation";
+import {motion} from "framer-motion";
 
 export default function Form (props) {
     const [userData, setUserData] = React.useState({
@@ -31,15 +32,18 @@ export default function Form (props) {
     }
 
     return (
-        <div>
+        <motion.div initial={{opacity: 0}}
+        animate={{y: "30px", opacity:1}}
+        transition={{duration:1.5, delay: 0.2}}>
 
         <form className={style.form}  onSubmit={handleSubmit}>
+            <h1>Rick and Morty App</h1>
             <div className={style.divUser}>
-            <label htmlFor="username">UserName:</label>
+            <label htmlFor="username">UserName</label>
             <input className={errors.username ? style.error : style.success } type="text" name="username" value={userData.username} onChange={handleInputChange}/>
             </div>
             <div className={style.divPass}> 
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password">Password</label>
             <input className={errors.password ? style.error : style.success } type="password" name="password" value={userData.password} onChange={handleInputChange}/>
                 
             </div>
@@ -49,7 +53,7 @@ export default function Form (props) {
             <p>{errors.username && errors.username}</p>
             <p>{errors.password && errors.password}</p>
         </div>
-        </div>
+        </motion.div>
     );
 };
 

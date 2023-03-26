@@ -1,5 +1,5 @@
 .nav {
-  border: 1px solid rgba(0, 0, 0, 0.548);
+  /* border: 1px solid rgba(0, 0, 0, 0.548); */
   background: linear-gradient(
     315deg,
     rgba(0, 0, 0, 0.415),
@@ -7,6 +7,7 @@
     #92007f51,
     rgba(198, 0, 201, 0.209)
   );
+  margin: auto;
   width: 80%;
   height: 80px;
   margin-bottom: 30px;
@@ -24,6 +25,11 @@
 }
 
 .nav .divNavSearch {
+  /* border: 1px solid green; */
+  display: flex;
+  align-items: center;
+}
+.nav .divNavSearch .divSearch {
   text-align: end;
   position: relative;
   border-radius: 20px;
@@ -31,12 +37,13 @@
   justify-content: end;
 }
 .active {
-  border: 1px solid white;
+  background: linear-gradient(315deg, #d8320d19, #7c1a8b);
+  /* border: 1px solid #7c1a8b; */
   font-family: "Rampart One", cursive;
   font-size: 30px;
   text-decoration: none;
   color: white;
-  margin-left: 40px;
+  margin-left: 20px;
   padding: 5px 10px 5px 10px;
   border-radius: 10px;
 }
@@ -44,29 +51,43 @@
   font-family: "Rampart One", cursive;
   font-size: 30px;
   text-decoration: none;
-  color: white;
-  margin-left: 40px;
+  color: rgba(255, 255, 255, 0.842);
+  margin-left: 20px;
   padding: 5px 10px 5px 10px;
 }
 
 .btnLogout {
-  position: absolute;
-  right: 30px;
-  top: 5px;
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  /* right: 80px;
+  top: 27px; */
+  margin-right: 20px;
   width: fit-content;
   height: fit-content;
-}
-
-.btnLogout button {
-  color: white;
+  border-radius: 3px;
+  text-decoration: none;
   background-color: rgba(255, 0, 247, 0.512);
+  cursor: pointer;
+}
+.btnLogout button {
+  display: flex;
+  color: white;
+  border: transparent;
+  background: linear-gradient(315deg, #d8320d19, #7c1a8b);
   font-family: "Poiret One", cursive;
   font-size: 18px;
-  margin: 5px;
   padding: 3px 5px 3px 5px;
   border-radius: 3px;
-  border: transparent;
+  text-decoration: none;
   transition: 0.3s;
+  cursor: pointer;
+}
+.icon {
+  width: 25px;
+  height: 25px;
+  margin: 0px 10px 0 0;
+  color: white;
 }
 
 .btnLogout button:hover {
@@ -103,7 +124,7 @@
   .disable {
     margin: 0 20px 0 20px;
   }
-  .nav .divNavSearch {
+  .nav .divSearch {
     /* border: 1px solid green; */
     text-align: center;
 

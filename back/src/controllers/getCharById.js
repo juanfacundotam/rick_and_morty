@@ -26,7 +26,7 @@ const getCharById = (res, id) => {
     })
     .catch((error) => {
       res.writeHead(500, { "Content-Type": "text/plain" });
-      res.end(JSON.stringify(`${error}`));
+      res.end(JSON.stringify(`El personaje con id ${id} no fue encontrado. ${error}`));
     })
 };
 

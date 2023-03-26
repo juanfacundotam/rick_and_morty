@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import style from "../About/About.module.css";
 import foto from "../../assets/foto.jpg";
+import { motion } from "framer-motion";
+
 
 const About = () => {
   const [imageLoad, setImageLoad] = useState(false);
@@ -10,7 +12,9 @@ const About = () => {
   };
 
   return (
-    <div className={style.divAbout}>
+    <motion.div className={style.divAbout} initial={{opacity: 0}}
+    animate={{y: "30px", opacity:1}}
+    transition={{duration:1, delay: 0.2}}>
       {imageLoad ? (
         <>
           <div className={style.divText}>
@@ -43,7 +47,7 @@ const About = () => {
           />
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

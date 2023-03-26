@@ -3,6 +3,7 @@ import style from "./Favorites.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../../components/Card/Card";
 import { filterCards, orderCards, resetFavorites} from "../../redux/actions";
+import { motion } from "framer-motion";
 
 const Favorites = () => {
   // const [guardados, setguardados] = useState([]);
@@ -27,7 +28,7 @@ const Favorites = () => {
   },[])
 
   return (
-    <div className={style.divFavorites}>
+    <motion.div className={style.divFavorites} animate={{y:20}}   transition={{duration: 0.3}}>
       <div className={style.divSelects}>
         <select onChange={handlerOrder} >
           <option disabled="disabled" selected>
@@ -61,7 +62,7 @@ const Favorites = () => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
