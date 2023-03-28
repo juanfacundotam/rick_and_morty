@@ -1,6 +1,5 @@
 const axios = require("axios");
-const  {URL}  = process.env
-console.log(URL)
+const { URL } = process.env;
 
 const getCharById = (req, res) => {
   const { id } = req.params;
