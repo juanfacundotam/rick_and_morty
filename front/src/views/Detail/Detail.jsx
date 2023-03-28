@@ -27,7 +27,7 @@ const Detail = () => {
   return (
     <motion.div className={style.divDetail} initial={{opacity: 0}}
     animate={{y: "30px", opacity:1}}
-    transition={{duration: 0.8, delay: 0.1}}>
+    transition={{duration: 0.7}}>
       {character.name ? (
         <>
           <div className={style.divText}>

@@ -14,7 +14,7 @@ const About = () => {
   return (
     <motion.div className={style.divAbout} initial={{opacity: 0}}
     animate={{y: "30px", opacity:1}}
-    transition={{duration:1, delay: 0.2}}>
+    transition={{duration:0.8, delay: 0.1}}>
       {imageLoad ? (
         <>
           <div className={style.divText}>

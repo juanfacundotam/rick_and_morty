@@ -34,7 +34,7 @@ export default function Form (props) {
     return (
         <motion.div initial={{opacity: 0}}
         animate={{y: "30px", opacity:1}}
-        transition={{duration:1.5, delay: 0.2}}>
+        transition={{duration:0.8}}>
 
         <form className={style.form}  onSubmit={handleSubmit}>
             <h1>Rick and Morty App</h1>

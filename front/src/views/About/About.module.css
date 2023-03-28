@@ -1,7 +1,10 @@
 .divAbout {
-  background-color: rgba(151, 74, 74, 0.205);
+  /* background-color: rgba(151, 74, 74, 0.205); */
+  /* background-color: rgba(153, 153, 153, 0.1); */
+
   min-width: 70%;
   max-width: 70%;
+  margin-bottom: 30PX;
   background-color: rgba(0, 0, 0, 0.507);
   color: white;
   border-radius: 20px;
@@ -121,6 +124,7 @@
     justify-content: center ;
     align-items: center;
     text-align: center;
+
   }
   .image {
     width: 200px;
