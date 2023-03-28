@@ -48,7 +48,7 @@ function App() {
       alert("No se permiten ID repetidos");
     } else {
       // fetch(`${URL_BASE}/character/${character}?key=${API_KEY}`)
-      fetch(`${URL_BASE}/rickandmorty/onsearch/${character}`)
+      fetch(`${URL_BASE}/onsearch/${character}`)
         .then((response) => response.json())
         .then((data) => {
           console.log(data)
