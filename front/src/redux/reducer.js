@@ -39,12 +39,10 @@ const rootReducer = (state = initialState, action) => {
     case FILTER_CARDS:
       let allCharsFiltered = [];
       if (action.payload !== "Todos") {
-        console.log("x");
         allCharsFiltered = state.allCharacters.filter(
           (char) => char.gender === action.payload
         );
       } else {
-        console.log("T");
         allCharsFiltered = state.allCharacters;
       }
       return { ...state, myFavorites: allCharsFiltered };

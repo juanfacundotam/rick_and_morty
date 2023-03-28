@@ -14,7 +14,12 @@ export const addFavorite = (favorite) => {
   return { type: ADD_FAVORITE, payload: favorite };
 };
 export const deleteFavorite = (id) => {
-  return { type: DELETE_FAVORITE, payload: id };
+  try {
+    const response = axios.delete(`${URL_BASE}/rickandmorty/fav/${id}`);
+    return { type: DELETE_FAVORITE, payload: id };
+  } catch (error) {
+    return {error: error.message}
+  }
 };
 
 export const getCharacterDetail = (id) => {

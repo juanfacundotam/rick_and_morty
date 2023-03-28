@@ -26,12 +26,16 @@ export default function Card(props) {
     });
   }, [allCharacters]);
 
-  const getFavorite = () => {
-    axios
-      .post("http://localhost:3001/rickandmorty/fav", props)
-      .then((response) => response.data)
-      .then(data => dispatch(addFavorite(data)))
-
+  const getFavorite = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3001/rickandmorty/fav",
+        props
+      );
+      dispatch(addFavorite(response.data));
+    } catch (error) {
+      return {error: error.message}
+    }
   };
 
   const handleFavorite = () => {
