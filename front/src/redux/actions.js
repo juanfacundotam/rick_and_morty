@@ -10,11 +10,10 @@ export const RESET_FAVORITES = "RESET_FAVORITES"
 const URL_BASE = "http://localhost:3001";
 
 export const addFavorite = (favorite) => {
-  axios.post(`${URL_BASE}/rickandmorty/fav`, favorite)
+  // axios.post(`${URL_BASE}/rickandmorty/fav`, favorite)
   return { type: ADD_FAVORITE, payload: favorite };
 };
 export const deleteFavorite = (id) => {
-  axios.delete(`${URL_BASE}/rickandmorty/fav/${id}`)
   return { type: DELETE_FAVORITE, payload: id };
 };
 

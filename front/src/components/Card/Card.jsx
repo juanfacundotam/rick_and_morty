@@ -1,18 +1,19 @@
 import React from "react";
+import axios from "axios";
 import { useState, useEffect } from "react";
 import styled from "styled-components";
 import styles from "./Card.module.css";
 import { Link, useLocation } from "react-router-dom";
 import { addFavorite, deleteFavorite } from "../../redux/actions";
 import { useDispatch, useSelector, connect } from "react-redux";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 // { id, name, species, gender, image, onClose }
 
 export default function Card(props) {
   const [isFav, setIsFav] = useState(false);
   const myFavorites = useSelector((state) => state.myFavorites);
-  const {allCharacters} = useSelector((state) => state);
+  const { allCharacters } = useSelector((state) => state);
 
   const dispatch = useDispatch();
   const { pathname } = useLocation();
@@ -25,13 +26,22 @@ export default function Card(props) {
     });
   }, [allCharacters]);
 
+  const getFavorite = () => {
+    axios
+      .post("http://localhost:3001/rickandmorty/fav", props)
+      .then((response) => response.data)
+      .then(data => dispatch(addFavorite(data)))
+
+  };
+
   const handleFavorite = () => {
     if (isFav) {
       dispatch(deleteFavorite(props.id));
       // props.deleteFavorite(props.id)
       setIsFav(false);
     } else {
-      dispatch(addFavorite(props));
+      getFavorite();
+      // dispatch(addFavorite(props));
       setIsFav(true);
     }
   };
@@ -43,9 +53,12 @@ export default function Card(props) {
   };
 
   return (
-    <motion.div className={styles.container} initial={{opacity: 0, scale: 0.95 }}
-    animate={{opacity:1, scale: 1}}
-    transition={{duration:0.1}}>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.1 }}
+    >
       <div className={styles.divButton}>
         {/* {
    isFav ? (

@@ -8,6 +8,10 @@ router.get("/onsearch/:id", getCharById); //(req, res) => getCharById(); similar
 
 router.get("/detail/:id", getCharByDetail);
 
+
+//***************************************************************** */
+// router.use("/rickandmorty/favs")
+
 router.get("/rickandmorty/fav", (req, res) => {
   if (favorites.length > 0) {
     res.status(200).json(favorites);
@@ -28,7 +32,6 @@ router.post("/rickandmorty/fav", (req, res) => {
 
 router.delete("/rickandmorty/fav/:id", (req, res) => {
   const { id } = req.params;
-  console.log(id);
   const favFilter = favorites.filter((char) => char.id !== Number(id));
   if (favFilter.length !== favorites.length) {
     favorites = favFilter;

@@ -4,7 +4,7 @@ require("dotenv").config();
 const morgan = require("morgan");
 const router = require("./routes/index");
 const cors = require("cors");
-const PORT = 3001;
+const PORT = process.env.PORT || 3001; 
 
 server.use(cors());
 server.use(morgan("dev"));

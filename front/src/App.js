@@ -51,7 +51,7 @@ function App() {
       fetch(`${URL_BASE}/onsearch/${character}`)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data)
+
           if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
           } else {

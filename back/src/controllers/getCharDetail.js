@@ -3,7 +3,6 @@ const { URL } = process.env;
 
 const getCharByDetail = (req, res) => {
   const { id } = req.params;
-  console.log("entramos controller by Detail")
   axios
     .get(`${URL}/character/${id}`)
     .then((response) => response.data)

@@ -31,14 +31,14 @@ const Favorites = () => {
     <motion.div className={style.divFavorites} animate={{y:20}}   transition={{duration: 0.3}}>
       <div className={style.divSelects}>
         <select onChange={handlerOrder} >
-          <option disabled="disabled" selected>
+          <option disabled="disabled" selected defaultValue="Valor inicial">
             Order By
           </option>
           <option value="Ascendente">Ascendente</option>
           <option value="Descendente">Descendente</option>
         </select>
         <select onChange={handlerFilter}>
-          <option disabled="disabled" selected>
+          <option disabled="disabled" selected defaultValue="Valor inicial">
             Filter By
           </option>
           <option value="Todos">Todos</option>
