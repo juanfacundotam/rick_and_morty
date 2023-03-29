@@ -18,20 +18,15 @@ const Favorites = () => {
 
   const handlerOrder = (event) => {
     dispatch(orderCards(event.target.value));
+
   };
   const handlerFilter = (event) => {
     dispatch(filterCards(event.target.value));
-
   };
 
-  // useEffect(() => {
-
-  // },[])
 
   useEffect(() => {
     dispatch(getFavorites());
-    
-    dispatch(resetFavorites());
   }, []);
 
   return (

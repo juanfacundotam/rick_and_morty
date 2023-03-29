@@ -19,7 +19,7 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_FAVORITES:
-      return { ...state, myFavorites: action.payload };
+      return { ...state, myFavorites: action.payload, allCharacters:action.payload };
 
     case ADD_FAVORITE:
       return {
@@ -50,11 +50,20 @@ const rootReducer = (state = initialState, action) => {
       if (action.payload !== "Todos") {
         allCharsFiltered = state.allCharacters.filter(
           (char) => char.gender === action.payload
-        );
+        );        
+        console.log("myFavorites")
+        console.log(state.myFavorites);
+        console.log("characters")
+        console.log(state.allCharacters);
+        console.log("filtrados");
+        console.log(allCharsFiltered)
       } else {
-        allCharsFiltered = state.myFavorites;
+        allCharsFiltered = state.allCharacters;
       }
+
       return { ...state, myFavorites: allCharsFiltered };
+
+
 
     case RESET_FAVORITES:
       return {

@@ -82,6 +82,7 @@
 .btnLogout button {
   display: flex;
   color: white;
+  
   border: transparent;
   background: linear-gradient(315deg, #d8320d19, #7c1a8b);
   font-family: "Poiret One", cursive;
