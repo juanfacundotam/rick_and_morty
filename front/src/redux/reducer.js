@@ -7,6 +7,7 @@ import {
   GET_CHARACTER_DETAIL,
   ORDER_CARDS,
   RESET_FAVORITES,
+  GET_FAVORITES,
 } from "./actions";
 
 const initialState = {
@@ -17,12 +18,16 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
+    case GET_FAVORITES:
+      return { ...state, myFavorites: action.payload };
+
     case ADD_FAVORITE:
       return {
         ...state,
         myFavorites: [...state.myFavorites, action.payload],
         allCharacters: [...state.allCharacters, action.payload], //necesitamos dos estados que manejen la misma info para hacer los filtrados sin perder el original
       };
+
     case DELETE_FAVORITE:
       const filtered = state.myFavorites.filter(
         (char) => char.id !== action.payload
@@ -32,10 +37,14 @@ const rootReducer = (state = initialState, action) => {
         myFavorites: filtered,
         allCharacters: filtered,
       };
+
     case GET_CHARACTER_DETAIL:
       return { ...state, characterDetail: action.payload };
+
     case CLEAN_DETAIL:
       return { ...state, characterDetail: {} };
+
+    //********************************************************************************** */
     case FILTER_CARDS:
       let allCharsFiltered = [];
       if (action.payload !== "Todos") {
@@ -43,22 +52,23 @@ const rootReducer = (state = initialState, action) => {
           (char) => char.gender === action.payload
         );
       } else {
-        allCharsFiltered = state.allCharacters;
+        allCharsFiltered = state.myFavorites;
       }
       return { ...state, myFavorites: allCharsFiltered };
 
+    case RESET_FAVORITES:
+      return {
+        ...state,
+        myFavorites: state.allCharacters,
+      };
+
     case ORDER_CARDS:
-      // no hace falta destructurar allCharacter de nuevo porque estamos en el mismo bloque. tambien podemos usar state.allCharacter
       return {
         ...state,
         myFavorites:
           action.payload === "Ascendente"
-            ? state.allCharacters.sort((a, b) => a.id - b.id)
-            : state.allCharacters.sort((a, b) => b.id - a.id),
-      };
-    case RESET_FAVORITES:
-      return {
-        ...state, myFavorites: state.allCharacters
+            ? state.myFavorites.sort((a, b) => a.id - b.id)
+            : state.myFavorites.sort((a, b) => b.id - a.id),
       };
     default:
       return { ...state };

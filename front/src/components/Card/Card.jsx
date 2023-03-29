@@ -1,10 +1,10 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 import styles from "./Card.module.css";
 import { Link, useLocation } from "react-router-dom";
-import { addFavorite, deleteFavorite } from "../../redux/actions";
+import { getFavorites } from "../../redux/actions";
 import { useDispatch, useSelector, connect } from "react-redux";
 import { motion } from "framer-motion";
 
@@ -12,40 +12,37 @@ import { motion } from "framer-motion";
 
 export default function Card(props) {
   const [isFav, setIsFav] = useState(false);
-  const myFavorites = useSelector((state) => state.myFavorites);
   const { allCharacters } = useSelector((state) => state);
+  const { myFavorites } = useSelector((state) => state);
 
   const dispatch = useDispatch();
   const { pathname } = useLocation();
 
   useEffect(() => {
-    allCharacters.forEach((fav) => {
+    myFavorites.forEach((fav) => {
       if (fav.id === props.id) {
         setIsFav(true);
       }
     });
-  }, [allCharacters]);
+  }, [myFavorites]);
 
-  const getFavorite = async () => {
-    try {
-      const response = await axios.post(
-        "http://localhost:3001/rickandmorty/fav",
-        props
-      );
-      dispatch(addFavorite(response.data));
-    } catch (error) {
-      return {error: error.message}
-    }
+  const addFavorite = async () => {
+    await axios.post("http://localhost:3001/rickandmorty/fav", props);
+   console.log("Adherido a favoritos")
   };
+
+  const deleteFavorite = async (id) => {
+    await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`)
+    dispatch(getFavorites());
+    alert("Eliminado con exito")
+  }
 
   const handleFavorite = () => {
     if (isFav) {
-      dispatch(deleteFavorite(props.id));
-      // props.deleteFavorite(props.id)
+      deleteFavorite(props.id)
       setIsFav(false);
     } else {
-      getFavorite();
-      // dispatch(addFavorite(props));
+      addFavorite(props)
       setIsFav(true);
     }
   };
@@ -53,7 +50,7 @@ export default function Card(props) {
   const handleDelete = () => {
     props.onClose(props.id);
     // props.deleteFavorite(props.id)
-    dispatch(deleteFavorite(props.id));
+    // dispatch(deleteFavorite(props.id));
   };
 
   return (

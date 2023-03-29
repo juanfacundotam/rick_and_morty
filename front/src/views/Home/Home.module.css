@@ -5,4 +5,10 @@
     width: 100%;
 }
 
+@media screen and (max-width: 1050px) {
+    .divCards {
+        margin-top: 60px;
+    }
+  }
+
 

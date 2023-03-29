@@ -13,11 +13,11 @@ router.get("/detail/:id", getCharByDetail);
 // router.use("/rickandmorty/favs")
 
 router.get("/rickandmorty/fav", (req, res) => {
-  if (favorites.length > 0) {
-    res.status(200).json(favorites);
-  } else {
-    res.status(404).json({ error: "No hay personajes favoritos" });
-  }
+try {
+  res.status(200).json(favorites);
+} catch (error) {
+  res.status(404).json({ error: "No hay personajes favoritos" });
+}
 });
 
 router.post("/rickandmorty/fav", (req, res) => {

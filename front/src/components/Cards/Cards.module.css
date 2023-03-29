@@ -40,7 +40,7 @@
 
 @media screen and (max-width: 1050px) {
   .containerCards {
-    margin-top: 40px;
+    margin-top: 0;
   }
 }
 

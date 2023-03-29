@@ -2,7 +2,12 @@ import React, { useEffect } from "react";
 import style from "./Favorites.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import Card from "../../components/Card/Card";
-import { filterCards, orderCards, resetFavorites} from "../../redux/actions";
+import {
+  filterCards,
+  getFavorites,
+  orderCards,
+  resetFavorites,
+} from "../../redux/actions";
 import { motion } from "framer-motion";
 
 const Favorites = () => {
@@ -13,22 +18,28 @@ const Favorites = () => {
 
   const handlerOrder = (event) => {
     dispatch(orderCards(event.target.value));
-    console.log(myFavorites);
   };
   const handlerFilter = (event) => {
     dispatch(filterCards(event.target.value));
-    console.log(myFavorites);
-    console.log(allCharacters);
+
   };
 
+  // useEffect(() => {
+
+  // },[])
+
   useEffect(() => {
-    return () => {
-      dispatch(resetFavorites());
-    }
-  },[])
+    dispatch(getFavorites());
+    
+    dispatch(resetFavorites());
+  }, []);
 
   return (
-    <motion.div className={style.divFavorites} animate={{y:20}}   transition={{duration: 0.3}}>
+    <motion.div
+      className={style.divFavorites}
+      animate={{ y: 20 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className={style.divSelects}>
         <select onChange={handlerOrder} defaultValue="Order">
           <option disabled="disabled" value="Order">
