@@ -1,16 +1,16 @@
 const express = require("express");
-const server = express();
 require("dotenv").config();
 const morgan = require("morgan");
-const router = require("./routes/index");
+const router = require("./routes/rickandmorty.router");
 const cors = require("cors");
-const PORT = process.env.PORT || 3001; 
+const { sequelize } = require("./DB_connection");
+
+const server = express();
 
 server.use(cors());
 server.use(morgan("dev"));
 server.use(express.json());
-server.use("/", router);
+server.use("/rickandmorty", router);
 
-server.listen(PORT, () => {
-    console.log("Server raised in port " + PORT);
-})
+
+module.exports = server;

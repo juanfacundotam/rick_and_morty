@@ -204,7 +204,7 @@
 @media screen and (max-width: 450px) {
   .nav {
     width: 100vh;
-    background: none;
+    /* background: none; */
     border: none;
   }
   .active {

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import style from "./Form.module.css";
 import validation from "./validation";
+import {Link} from "react-router-dom"
 import {motion} from "framer-motion";
 
 export default function Form (props) {
@@ -48,6 +49,9 @@ export default function Form (props) {
                 
             </div>
             <button className={style.button} type="submit">Login</button>
+            <Link to={"/register"} className={style.linkBtn}>
+            Register Now
+            </Link>
         </form>
         <div  className={ errors.username === '' && errors.password === '' ? style.divErroresVacio : style.divErrores }>
             <p>{errors.username && errors.username}</p>

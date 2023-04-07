@@ -15,15 +15,17 @@ export default function Cards({ characters, closeCharacter}) {
 
   return (
     <div className={styles.containerCards}>
-      {characters.map(({ id, name, species, gender, image}) => {
+      {characters.map(({ id, name, species, gender, image, status, origin}) => {
         return (
 
           <Card
             key={id}
             id={id}
             name={name}
+            status={status}
             species={species}
             gender={gender}
+            origin={origin}
             image={image}
             onClose={closeCharacter}
           />

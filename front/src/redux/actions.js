@@ -21,7 +21,7 @@ export const deleteFavorite = (id) => {
 
 export const getCharacterDetail = (id) => {
   return async function (dispatch) {
-    const response = await axios(`${URL_BASE}/detail/${id}`);
+    const response = await axios(`${URL_BASE}/rickandmorty/detail/${id}`);
     dispatch({ type: GET_CHARACTER_DETAIL, payload: response.data }); //axios devuelve la response, dentro de ella esta data, dentro las propiedades de la api
   };
 };

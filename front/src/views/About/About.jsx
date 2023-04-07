@@ -21,7 +21,7 @@ const About = () => {
             <h1>Rick and Morty APP</h1>
             <p>
               Aplicacion WEB interactiva hecha a base de JavaScript - React -
-              Redux.
+              Redux - Express - SQL.
             </p>
             <h3>Sobre Mí</h3>
             <p>Juan Facundo Tam</p>

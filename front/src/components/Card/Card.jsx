@@ -27,22 +27,34 @@ export default function Card(props) {
   }, [myFavorites]);
 
   const addFavorite = async () => {
-    await axios.post("http://localhost:3001/rickandmorty/fav", props);
-   console.log("Adherido a favoritos")
+    const { id, name, status, species, gender, origin, image } = props;
+    const body = {
+      id,
+      name,
+      status,
+      species,
+      gender,
+      origin: origin.name,
+      image,
+    };
+    console.log(origin.name)
+    await axios.post("http://localhost:3001/rickandmorty/fav", body);
+    console.log("Adherido a favoritos");
+
   };
 
   const deleteFavorite = async (id) => {
-    await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`)
-    dispatch(getFavorites());
-    alert("Eliminado con exito")
-  }
+    await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`);
+    // dispatch(getFavorites());
+    alert("Eliminado con exito");
+  };
 
   const handleFavorite = () => {
     if (isFav) {
-      deleteFavorite(props.id)
+      deleteFavorite(props.id);
       setIsFav(false);
     } else {
-      addFavorite(props)
+      addFavorite(props);
       setIsFav(true);
     }
   };
