@@ -3,7 +3,7 @@ import style from "./FormRegister.module.css";
 import validation from "./validation";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function FormRegister(props) {
   const navigate = useNavigate();
@@ -40,7 +40,6 @@ export default function FormRegister(props) {
       alert("Usuario creado correctamente");
       navigate("/");
     }
-
   };
 
   return (
@@ -74,6 +73,7 @@ export default function FormRegister(props) {
         <button className={style.button} type="submit">
           Register
         </button>
+        <Link to={"/"} className={style.button}>&lt;&lt;</Link>
       </form>
       <div
         className={

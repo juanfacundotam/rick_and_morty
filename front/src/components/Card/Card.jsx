@@ -24,6 +24,7 @@ export default function Card(props) {
         setIsFav(true);
       }
     });
+
   }, [myFavorites]);
 
   const addFavorite = async () => {
@@ -46,7 +47,8 @@ export default function Card(props) {
   const deleteFavorite = async (id) => {
     await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`);
     // dispatch(getFavorites());
-    alert("Eliminado con exito");
+    alert("Eliminado de los favoritos con exito");
+    dispatch(getFavorites())
   };
 
   const handleFavorite = () => {
