@@ -7,6 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 import { getFavorites } from "../../redux/actions";
 import { useDispatch, useSelector, connect } from "react-redux";
 import { motion } from "framer-motion";
+import { AiFillHeart } from "react-icons/ai";
 
 // { id, name, species, gender, image, onClose }
 
@@ -28,7 +29,7 @@ export default function Card(props) {
   }, [myFavorites]);
 
   const addFavorite = async () => {
-    const { id, name, status, species, gender, origin, image } = props;
+    const { id, name, status, species, gender, origin, image, idUser } = props;
     const body = {
       id,
       name,
@@ -37,18 +38,19 @@ export default function Card(props) {
       gender,
       origin: origin.name,
       image,
+      iduser: idUser
     };
-    console.log(origin.name)
-    await axios.post("http://localhost:3001/rickandmorty/fav", body);
-    console.log("Adherido a favoritos");
+
+    await axios.post("/rickandmorty/fav", body);
+
 
   };
 
-  const deleteFavorite = async (id) => {
-    await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`);
+  const deleteFavorite = async () => {
+    await axios.delete(`/rickandmorty/favdelete?idUser=${props.idUser}&idFavorite=${props.id}`);
     // dispatch(getFavorites());
     alert("Eliminado de los favoritos con exito");
-    dispatch(getFavorites())
+    dispatch(getFavorites(props.idUser))
   };
 
   const handleFavorite = () => {
@@ -89,7 +91,7 @@ export default function Card(props) {
           }`}
           onClick={handleFavorite}
         >
-          ❤
+          <AiFillHeart className={styles.icon}/>
         </button>
 
         {pathname !== "/favorites" && (

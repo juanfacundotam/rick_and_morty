@@ -10,7 +10,7 @@ import {
 } from "../../redux/actions";
 import { motion } from "framer-motion";
 
-const Favorites = () => {
+const Favorites = ({idUser}) => {
   // const [guardados, setguardados] = useState([]);
   const { myFavorites } = useSelector((state) => state);
   const { allCharacters } = useSelector((state) => state);
@@ -26,7 +26,11 @@ const Favorites = () => {
 
 
   useEffect(() => {
-    dispatch(getFavorites());
+    dispatch(getFavorites(idUser));
+
+        return () => {
+      dispatch(resetFavorites());
+    }
   }, []);
 
   return (
@@ -64,6 +68,7 @@ const Favorites = () => {
               species={char.species}
               gender={char.gender}
               image={char.image}
+              idUser={idUser}
             />
           );
         })}
